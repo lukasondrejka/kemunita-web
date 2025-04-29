@@ -1,4 +1,3 @@
-
 export interface CalendarData {
   summary: string;
   description?: string;
