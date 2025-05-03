@@ -14,6 +14,6 @@ export const translations: Record<Language, Record<string, string>> = {
     "Read More": "Čítať viac",
     "Read Less": "Čítať menej",
     "No events": "Žiadne udalosti",
-    "Updated at": "Aktualizované",
+    "Updated": "Aktualizované",
   },
 };

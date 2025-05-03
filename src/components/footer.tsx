@@ -1,7 +1,7 @@
 "use client"
 
 import { useLanguage } from "@/components/providers/language-provider";
-import { formatDate } from "@/lib/utils";
+import { formatAtDate } from "@/lib/utils";
 
 interface FooterProps {
   updatedAt: string;
@@ -18,9 +18,11 @@ export function Footer({ updatedAt }: FooterProps) {
             <p className="text-sm text-muted-foreground">
               KEmunITa
             </p>
-            <p className="text-sm text-muted-foreground">
-              {t("Updated at")}: {formatDate(updatedAt, language)}
-            </p>
+            {updatedAt && (
+              <p className="text-sm text-muted-foreground">
+                {t("Updated")} {formatAtDate(updatedAt, language)}
+              </p>
+            )}
           </div>
           <div className="flex flex-col sm:items-end space-y-1">
             <a
