@@ -1,7 +1,7 @@
 "use client"
 
 import { useLanguage } from "@/components/providers/language-provider";
-import { formatAtDate } from "@/lib/utils";
+import { formatDate } from "@/lib/utils";
 
 interface FooterProps {
   updatedAt: string;
@@ -20,7 +20,7 @@ export function Footer({ updatedAt }: FooterProps) {
             </p>
             {updatedAt && (
               <p className="text-sm text-muted-foreground">
-                {t("Updated")} {formatAtDate(updatedAt, language)}
+                {t("Updated on")} {formatDate(updatedAt, language, { year: "numeric", month: "long", day: "numeric" })}
               </p>
             )}
           </div>

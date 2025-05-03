@@ -8,24 +8,22 @@ export function cn(...inputs: ClassValue[]): string {
   return twMerge(clsx(...inputs));
 }
 
-export function formatDate(dateString: string, language: Language): string {
-  return new Date(dateString).toLocaleDateString(getLocale(language), {
+export function formatDate(
+  dateString: string, 
+  language: Language, 
+  options: Intl.DateTimeFormatOptions = {
     weekday: "long",
     year: "numeric",
     month: "long",
     day: "numeric",
-  });
-}
-
-export function formatAtDate(dateString: string, language: Language): string {
-  const formattedDate = formatDate(dateString, language);
-  return language === "sk" 
-    ? `${new Date(dateString).getDay() === 4 ? 'vo' : 'v'} ${formattedDate}`
-    : `at ${formattedDate}`;
+  }
+): string {
+  if (!dateString) return "";
+  return new Date(dateString).toLocaleDateString(getLocale(language), options);
 }
 
 export function formatTime(dateString: string, language: Language): string {
-  return new Date(dateString).toLocaleTimeString(getLocale(language), {
+  return formatDate(dateString, language, {
     hour: "numeric",
     minute: "2-digit",
   });
