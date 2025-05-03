@@ -22,11 +22,16 @@ export function formatDate(
   return new Date(dateString).toLocaleDateString(getLocale(language), options);
 }
 
-export function formatTime(dateString: string, language: Language): string {
-  return formatDate(dateString, language, {
+export function formatTime(
+  dateString: string, 
+  language: Language,
+  options: Intl.DateTimeFormatOptions = {
     hour: "numeric",
     minute: "2-digit",
-  });
+  }
+): string {
+  if (!dateString) return "";
+  return new Date(dateString).toLocaleTimeString(getLocale(language), options);
 }
 
 function getLocale(language: Language): string {
