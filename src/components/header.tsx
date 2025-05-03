@@ -26,20 +26,20 @@ export function Header() {
           <div className="flex items-center space-x-2">
             <div className="flex border rounded-md overflow-hidden">
               <Button
-                variant={language === "sk" ? "default" : "ghost"}
-                size="sm"
-                onClick={() => setLanguage("sk")}
-                className="rounded-none"
-              >
-                SK
-              </Button>
-              <Button
                 variant={language === "en" ? "default" : "ghost"}
                 size="sm"
                 onClick={() => setLanguage("en")}
                 className="rounded-none"
               >
                 EN
+              </Button>
+              <Button
+                variant={language === "sk" ? "default" : "ghost"}
+                size="sm"
+                onClick={() => setLanguage("sk")}
+                className="rounded-none"
+              >
+                SK
               </Button>
             </div>
             <Button
