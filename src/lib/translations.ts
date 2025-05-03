@@ -15,5 +15,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "Read Less": "Čítať menej",
     "No events": "Žiadne udalosti",
     "Updated on": "Aktualizované",
+    "Google Calendar": "Google kalendár",
+    "Facebook Group": "Facebook skupina",
   },
 };
